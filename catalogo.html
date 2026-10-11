@@ -9,10 +9,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-/* Encabezado de página: franja de filete a sangre, oscurecida para el texto */
-.page-top{position:relative;color:#fff;padding:190px 0 90px;overflow:hidden;isolation:isolate;background:var(--fjord)}
-.page-top::before{content:"";position:absolute;inset:0;z-index:-2;background:url("img/cat-filete.jpg") center 40%/cover}
-.page-top::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,43,76,.92) 0%,rgba(10,43,76,.7) 55%,rgba(10,43,76,.25) 100%)}
+/* Encabezado de página: fiordo de la portada (alta resolución), encuadrado en las jaulas de cultivo */
+.page-top{position:relative;color:#fff;padding:190px 0 100px;overflow:hidden;isolation:isolate;background:var(--fjord)}
+.page-top::before{content:"";position:absolute;inset:0;z-index:-2;background:url("img/portada.webp") 75% 62%/cover}
+.page-top::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,43,76,.9) 0%,rgba(10,43,76,.62) 50%,rgba(10,43,76,.08) 100%)}
 .page-top h1{font-size:clamp(2.8rem,7vw,5.4rem);font-weight:800;max-width:12ch}
 .page-top p{max-width:54ch;margin-top:1em;font-size:1.12rem;color:#d9e8f2}
 
@@ -149,7 +149,7 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
           <p class="keep">Mantiene: espinas laterales (pin bones) y piel</p>
         </article>
         <article class="cut">
-          <figure><img src="img/g-trim-c.jpg" width="940" height="340" alt="Filete Trim C sin espinas laterales"></figure>
+          <figure><img src="img/g-trim-c.jpg" width="976" height="312" alt="Filete Trim C sin espinas laterales"></figure>
           <div class="tagline"><span class="k">Trim C</span><span class="n">Sin espinas</span></div>
           <div class="level" aria-label="Nivel de limpieza 3 de 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
           <p>Todo lo del Trim B, y además sin espinas laterales (pin bones).</p>
