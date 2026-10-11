@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 610 236" role="img" aria-label="IlustraciÃ³n filete Trim B">
+<defs>
+  <linearGradient id="flesh" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff8a5c"/><stop offset=".55" stop-color="#f26a3d"/><stop offset="1" stop-color="#e65a2f"/></linearGradient>
+  <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4c5966"/><stop offset=".5" stop-color="#9aa6b1"/><stop offset="1" stop-color="#d9dfe4"/></linearGradient>
+  <linearGradient id="fin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f4b57"/><stop offset="1" stop-color="#8794a0"/></linearGradient>
+  <pattern id="vein" width="26" height="236" patternUnits="userSpaceOnUse"><path d="M26,-6 C2,46 2,74 15,116 C2,160 2,190 26,242" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="2.6"/></pattern>
+  <clipPath id="clip"><path d="M34,110 C80,92 130,76 210,60 C310,40 425,28 522,32 C552,34 570,46 576,72 L580,150 C577,180 558,194 522,198 C430,206 330,198 232,174 C150,154 92,140 34,128 Z"/></clipPath>
+  <filter id="sh" x="-5%" y="-10%" width="110%" height="130%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0a2b4c" flood-opacity=".18"/></filter>
+</defs>
+<g filter="url(#sh)">
+<path d="M34,110 C80,92 130,76 210,60 C310,40 425,28 522,32 C552,34 570,46 576,72 L580,150 C577,180 558,194 522,198 C430,206 330,198 232,174 C150,154 92,140 34,128 Z" fill="url(#skin)" stroke="url(#skin)" stroke-width="10" stroke-linejoin="round"/>
+<path d="M34,110 C80,92 130,76 210,60 C310,40 425,28 522,32 C552,34 570,46 576,72 L580,150 C577,180 558,194 522,198 C430,206 330,198 232,174 C150,154 92,140 34,128 Z" fill="url(#flesh)"/>
+<g clip-path="url(#clip)">
+<rect width="610" height="236" fill="url(#vein)"/>
+<path d="M40,116 C200,112 400,104 580,100" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+<path d="M120,78 C230,52 390,34 525,36" fill="none" stroke="#fff6ef" stroke-opacity=".95" stroke-width="13" stroke-linecap="round"/>
+<path d="M250,182 C340,198 450,202 525,196 C552,193 570,180 578,160" fill="none" stroke="#f7f1ec" stroke-opacity=".95" stroke-width="15" stroke-linecap="round"/>
+</g>
+<g stroke="#fffaf5" stroke-width="4.5" stroke-linecap="round"><line x1="330" y1="92" x2="336" y2="112"/><line x1="351" y1="91.4" x2="357" y2="111.4"/><line x1="372" y1="90.8" x2="378" y2="110.8"/><line x1="393" y1="90.2" x2="399" y2="110.2"/><line x1="414" y1="89.6" x2="420" y2="109.6"/><line x1="435" y1="89" x2="441" y2="109"/><line x1="456" y1="88.4" x2="462" y2="108.4"/><line x1="477" y1="87.8" x2="483" y2="107.8"/><line x1="498" y1="87.2" x2="504" y2="107.2"/><line x1="519" y1="86.6" x2="525" y2="106.6"/><line x1="540" y1="86" x2="546" y2="106"/></g>
+</g></svg>

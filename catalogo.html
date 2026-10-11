@@ -79,6 +79,14 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 .cut .k{font:800 1.9rem/1 Urbanist;color:var(--fjord)}
 .cut .n{font:600 1rem Urbanist;color:var(--salmon)}
 .cut p{color:var(--slate);font-size:.98rem}
+.legend{display:flex;flex-wrap:wrap;gap:10px 22px;list-style:none;padding:0;margin:-8px 0 24px;font-size:.9rem;color:var(--slate)}
+.legend li{display:flex;align-items:center;gap:8px}
+.sw{width:22px;height:12px;border-radius:6px;display:inline-block}
+.sw.skin{background:linear-gradient(180deg,#4c5966,#d9dfe4)}
+.sw.fat{background:#f7f1ec;border:1px solid #e3d3c4}
+.sw.pins{background:#f26a3d repeating-linear-gradient(100deg,transparent 0 4px,#fff 4px 6px)}
+.sw.fin{background:linear-gradient(135deg,#3f4b57,#8794a0)}
+.sw.bone{background:#efe7da;border:1px solid #cdbda6}
 .trim-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
 .trim-grid .cut{grid-column:span 2}
 .trim-grid .cut:nth-child(4){grid-column:2 / span 2}
@@ -143,37 +151,44 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
       </div>
 
       <h3 class="group-title">Cortes de filete</h3>
+      <ul class="legend" aria-label="Cómo leer las ilustraciones">
+        <li><i class="sw skin"></i>Piel</li>
+        <li><i class="sw fat"></i>Grasa y peritoneo</li>
+        <li><i class="sw pins"></i>Espinas laterales</li>
+        <li><i class="sw fin"></i>Aletas y cola</li>
+        <li><i class="sw bone"></i>Hueso del cuello</li>
+      </ul>
       <div class="trim-grid">
         <article class="cut">
-          <figure><img src="img/g-trim-a.jpg" width="1072" height="360" alt="Filete Trim A con piel y espinas laterales"></figure>
+          <figure><img src="img/trim-a.svg" width="610" height="236" alt="Filete Trim A con piel y espinas laterales"></figure>
           <div class="tagline"><span class="k">Trim A</span><span class="n">Básico</span></div>
           <div class="level" aria-label="Nivel de limpieza 1 de 5"><i class="on"></i><i></i><i></i><i></i><i></i></div>
           <p>Sin espina dorsal ni espinas de la cavidad ventral.</p>
-          <p class="keep">Mantiene: espinas laterales (pin bones) y piel</p>
+          <p class="keep">Mantiene: piel, espinas laterales, aletas, grasa del vientre y hueso del cuello</p>
         </article>
         <article class="cut">
-          <figure><img src="img/g-trim-b.jpg" width="976" height="312" alt="Filete Trim B sin aletas ni grasa del vientre"></figure>
+          <figure><img src="img/trim-b.svg" width="610" height="236" alt="Filete Trim B sin aletas ni grasa del vientre"></figure>
           <div class="tagline"><span class="k">Trim B</span><span class="n">Estándar</span></div>
           <div class="level" aria-label="Nivel de limpieza 2 de 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
           <p>Sin espina dorsal, espinas ventrales, aletas, grasa del vientre ni hueso del cuello.</p>
-          <p class="keep">Mantiene: espinas laterales (pin bones) y piel</p>
+          <p class="keep">Mantiene: piel, espinas laterales y peritoneo</p>
         </article>
         <article class="cut">
-          <figure><img src="img/g-trim-c.jpg" width="976" height="312" alt="Filete Trim C sin espinas laterales"></figure>
+          <figure><img src="img/trim-c.svg" width="610" height="236" alt="Filete Trim C sin espinas laterales"></figure>
           <div class="tagline"><span class="k">Trim C</span><span class="n">Sin espinas</span></div>
           <div class="level" aria-label="Nivel de limpieza 3 de 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
           <p>Todo lo del Trim B, y además sin espinas laterales (pin bones).</p>
-          <p class="keep">Mantiene: piel</p>
+          <p class="keep">Mantiene: piel y peritoneo</p>
         </article>
         <article class="cut">
-          <figure><img src="img/g-trim-d.jpg" width="928" height="328" alt="Filete Trim D completamente recortado"></figure>
+          <figure><img src="img/trim-d.svg" width="610" height="236" alt="Filete Trim D completamente recortado"></figure>
           <div class="tagline"><span class="k">Trim D</span><span class="n">Totalmente limpio</span></div>
           <div class="level" aria-label="Nivel de limpieza 4 de 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
           <p>Completamente recortado: sin espinas, aletas, grasa, hueso del cuello ni peritoneo. Cola recortada.</p>
           <p class="keep">Mantiene: piel</p>
         </article>
         <article class="cut">
-          <figure><img src="img/g-trim-e.jpg" width="960" height="304" alt="Filete Trim E sin piel"></figure>
+          <figure><img src="img/trim-e.svg" width="610" height="236" alt="Filete Trim E sin piel"></figure>
           <div class="tagline"><span class="k">Trim E</span><span class="n">Sin piel</span></div>
           <div class="level" aria-label="Nivel de limpieza 5 de 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
           <p>Totalmente limpio y sin piel. Sin grasa, espinas, aletas ni peritoneo.</p>
