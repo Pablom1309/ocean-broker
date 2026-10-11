@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -54,6 +54,32 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 .grade ul{color:var(--slate);margin-top:12px;padding-left:1.1em}
 @media(max-width:820px){.grade-list{grid-template-columns:1fr}}
 
+/* Guía de formatos y cortes */
+.guide{background:var(--white)}
+.guide-head{display:grid;grid-template-columns:1fr 1fr;gap:24px 60px;align-items:end;margin-bottom:56px}
+.guide-head h2{font-size:clamp(2.2rem,4.6vw,3.6rem);font-weight:800}
+.guide-head p{color:var(--slate);max-width:50ch}
+.group-title{display:flex;align-items:center;gap:16px;font:700 1.35rem Urbanist;color:var(--fjord);margin:0 0 24px}
+.group-title::after{content:"";flex:1;height:1px;background:#d3e6ea}
+.whole{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:72px}
+.cut{background:var(--ice);border-radius:var(--r-lg);padding:28px 28px 30px;display:flex;flex-direction:column}
+.cut figure{margin:0 0 22px;aspect-ratio:16/6;display:grid;place-items:center;background:radial-gradient(ellipse at center,#fff 0%,#fff 55%,rgba(255,255,255,0) 72%);border-radius:14px}
+.cut img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.cut .tagline{display:flex;align-items:baseline;gap:12px;margin-bottom:8px}
+.cut .k{font:800 1.9rem/1 Urbanist;color:var(--fjord)}
+.cut .n{font:600 1rem Urbanist;color:var(--salmon)}
+.cut p{color:var(--slate);font-size:.98rem}
+.trim-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
+.trim-grid .cut{grid-column:span 2}
+.trim-grid .cut:nth-child(4){grid-column:2 / span 2}
+.trim-grid .cut:nth-child(5){grid-column:4 / span 2}
+.level{display:flex;gap:5px;margin:4px 0 12px}
+.level i{height:5px;flex:1;border-radius:3px;background:#cfe0e6}
+.level i.on{background:var(--salmon)}
+.cut .keep{margin-top:auto;padding-top:14px;font-size:.88rem;color:var(--fjord-2);font-weight:600}
+@media(max-width:980px){.trim-grid{grid-template-columns:1fr 1fr}.trim-grid .cut,.trim-grid .cut:nth-child(4),.trim-grid .cut:nth-child(5){grid-column:auto}}
+@media(max-width:700px){.guide-head,.whole,.trim-grid{grid-template-columns:1fr}}
+
 .ctas-row{display:flex;gap:12px;flex-wrap:wrap}
 .btn-wa{background:#25D366;color:#073b1f}
 </style>
@@ -82,6 +108,68 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
     <div class="wrap">
       <h1>Catálogo de salmón</h1>
       <p>Salmón del sur de Chile en los formatos que usa la industria: entero con o sin cabeza, y filete en cinco niveles de corte. Elige formato, calidad y calibre, y te cotizamos por caja.</p>
+    </div>
+  </section>
+
+  <section class="guide" id="guia">
+    <div class="wrap">
+      <div class="guide-head">
+        <h2>Guía de formatos y cortes</h2>
+        <p>Así llega el salmón según el formato que elijas. En el pescado entero cambia si viene con o sin cabeza; en el filete, cuánto trabajo de limpieza trae hecho, del Trim A al Trim E.</p>
+      </div>
+
+      <h3 class="group-title">Pescado entero</h3>
+      <div class="whole">
+        <article class="cut">
+          <figure><img src="img/g-hon.jpg" width="1280" height="360" alt="Salmón entero con cabeza"></figure>
+          <div class="tagline"><span class="k">HON</span><span class="n">Con cabeza</span></div>
+          <p>Pescado entero y eviscerado, con cabeza y agallas intactas.</p>
+        </article>
+        <article class="cut">
+          <figure><img src="img/g-hg.jpg" width="904" height="372" alt="Salmón entero sin cabeza"></figure>
+          <div class="tagline"><span class="k">HG</span><span class="n">Sin cabeza</span></div>
+          <p>Pescado eviscerado, sin cabeza y sin agallas.</p>
+        </article>
+      </div>
+
+      <h3 class="group-title">Cortes de filete</h3>
+      <div class="trim-grid">
+        <article class="cut">
+          <figure><img src="img/g-trim-a.jpg" width="1072" height="360" alt="Filete Trim A con piel y espinas laterales"></figure>
+          <div class="tagline"><span class="k">Trim A</span><span class="n">Básico</span></div>
+          <div class="level" aria-label="Nivel de limpieza 1 de 5"><i class="on"></i><i></i><i></i><i></i><i></i></div>
+          <p>Sin espina dorsal ni espinas de la cavidad ventral.</p>
+          <p class="keep">Mantiene: espinas laterales (pin bones) y piel</p>
+        </article>
+        <article class="cut">
+          <figure><img src="img/g-trim-b.jpg" width="976" height="312" alt="Filete Trim B sin aletas ni grasa del vientre"></figure>
+          <div class="tagline"><span class="k">Trim B</span><span class="n">Estándar</span></div>
+          <div class="level" aria-label="Nivel de limpieza 2 de 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
+          <p>Sin espina dorsal, espinas ventrales, aletas, grasa del vientre ni hueso del cuello.</p>
+          <p class="keep">Mantiene: espinas laterales (pin bones) y piel</p>
+        </article>
+        <article class="cut">
+          <figure><img src="img/g-trim-c.jpg" width="940" height="340" alt="Filete Trim C sin espinas laterales"></figure>
+          <div class="tagline"><span class="k">Trim C</span><span class="n">Sin espinas</span></div>
+          <div class="level" aria-label="Nivel de limpieza 3 de 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
+          <p>Todo lo del Trim B, y además sin espinas laterales (pin bones).</p>
+          <p class="keep">Mantiene: piel</p>
+        </article>
+        <article class="cut">
+          <figure><img src="img/g-trim-d.jpg" width="928" height="328" alt="Filete Trim D completamente recortado"></figure>
+          <div class="tagline"><span class="k">Trim D</span><span class="n">Totalmente limpio</span></div>
+          <div class="level" aria-label="Nivel de limpieza 4 de 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
+          <p>Completamente recortado: sin espinas, aletas, grasa, hueso del cuello ni peritoneo. Cola recortada.</p>
+          <p class="keep">Mantiene: piel</p>
+        </article>
+        <article class="cut">
+          <figure><img src="img/g-trim-e.jpg" width="960" height="304" alt="Filete Trim E sin piel"></figure>
+          <div class="tagline"><span class="k">Trim E</span><span class="n">Sin piel</span></div>
+          <div class="level" aria-label="Nivel de limpieza 5 de 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
+          <p>Totalmente limpio y sin piel. Sin grasa, espinas, aletas ni peritoneo.</p>
+          <p class="keep">Listo para porcionar</p>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -138,7 +226,7 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 
   <section class="alt trims" id="trims">
     <div class="wrap">
-      <h2>Niveles de trim del filete</h2>
+      <h2>Resumen de trims</h2>
       <p class="lead">Cada trim incluye todo lo del anterior y suma un corte más. El Trim A es el filete más básico; el Trim E llega sin espinas, sin grasa recortable y sin piel.</p>
       <div class="table-wrap" role="region" aria-label="Tabla de trims" tabindex="0">
         <table>
@@ -146,15 +234,14 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
             <tr><th scope="col">Qué se retira</th><th scope="col">Trim A</th><th scope="col">Trim B</th><th scope="col">Trim C</th><th scope="col">Trim D</th><th scope="col">Trim E</th></tr>
           </thead>
           <tbody>
-            <tr><th scope="row">Espinazo</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-            <tr><th scope="row">Costillas (huesos de la panza)</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-            <tr><th scope="row">Aleta dorsal</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-            <tr><th scope="row">Clavícula</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-            <tr><th scope="row">Huesos dorsales</th><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-            <tr><th scope="row">Grasa ventral</th><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-            <tr><th scope="row">Espinas (pin bones)</th><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
-            <tr><th scope="row">Grasa dorsal y borde de panza</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
-            <tr><th scope="row">Cola recortada y membrana</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Espina dorsal</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Espinas de la cavidad ventral</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Aletas</th><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Grasa del vientre</th><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Hueso del cuello</th><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Espinas laterales (pin bones)</th><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Grasa restante y peritoneo</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Cola recortada</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
             <tr><th scope="row">Piel</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td></tr>
           </tbody>
         </table>
