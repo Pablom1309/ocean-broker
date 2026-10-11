@@ -216,10 +216,6 @@ textarea{min-height:110px;resize:vertical}
             <li>Confirmas y coordinamos la entrega refrigerada.</li>
           </ol>
         </div>
-        <div class="side-card">
-          <h3>¿Prefieres hablar directo?</h3>
-          <p>Llámanos al <a href="tel:+56998583626">+56 9 9858 3626</a>.</p>
-        </div>
       </aside>
     </div>
   </section>
@@ -233,7 +229,7 @@ textarea{min-height:110px;resize:vertical}
     </div>
     <div>
       <h3>Contacto</h3>
-      <p><a href="tel:+56998583626">+56 9 9858 3626</a></p>
+      <p><a href="cotizar.html">Solicitar cotización</a></p>
     </div>
     <div>
       <h3>Dirección en Chile</h3>
@@ -290,7 +286,7 @@ form.addEventListener('submit', async e => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } catch (err) {
     statusEl.className = 'status fail';
-    statusEl.innerHTML = 'No se pudo enviar la solicitud. Revisa tu conexión e inténtalo de nuevo, o llámanos al <a href="tel:+56998583626">+56 9 9858 3626</a>.';
+    statusEl.innerHTML = 'No se pudo enviar la solicitud. Revisa tu conexión e inténtalo de nuevo en unos minutos.';
     btn.disabled = false; btn.textContent = 'Enviar solicitud';
   }
 });
