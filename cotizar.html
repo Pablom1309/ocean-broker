@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="es">
 <head>
 <meta charset="utf-8">
@@ -173,7 +173,7 @@ textarea{min-height:110px;resize:vertical}
                 <span class="err-msg">Escribe un correo válido, por ejemplo nombre@empresa.cl.</span>
               </div>
               <div class="field">
-                <label for="telefono">Teléfono / WhatsApp</label>
+                <label for="telefono">Teléfono</label>
                 <input id="telefono" name="Teléfono" type="tel" autocomplete="tel" placeholder="+56 9 1234 5678" required>
                 <span class="err-msg">Escribe un teléfono de contacto.</span>
               </div>
@@ -218,8 +218,7 @@ textarea{min-height:110px;resize:vertical}
         </div>
         <div class="side-card">
           <h3>¿Prefieres hablar directo?</h3>
-          <p>Escríbenos por WhatsApp o llámanos al <a href="tel:+56998583626">+56 9 9858 3626</a>.</p>
-          <a class="btn btn-wa" href="https://wa.me/56998583626?text=Hola%2C%20quiero%20cotizar%20salm%C3%B3n">Escribir por WhatsApp</a>
+          <p>Llámanos al <a href="tel:+56998583626">+56 9 9858 3626</a>.</p>
         </div>
       </aside>
     </div>
@@ -234,7 +233,6 @@ textarea{min-height:110px;resize:vertical}
     </div>
     <div>
       <h3>Contacto</h3>
-      <p><a href="mailto:m.corretajepesca@gmail.com">m.corretajepesca@gmail.com</a></p>
       <p><a href="tel:+56998583626">+56 9 9858 3626</a></p>
     </div>
     <div>
@@ -292,7 +290,7 @@ form.addEventListener('submit', async e => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } catch (err) {
     statusEl.className = 'status fail';
-    statusEl.innerHTML = 'No se pudo enviar la solicitud. Revisa tu conexión e inténtalo de nuevo, o escríbenos por <a href="https://wa.me/56998583626">WhatsApp</a>.';
+    statusEl.innerHTML = 'No se pudo enviar la solicitud. Revisa tu conexión e inténtalo de nuevo, o llámanos al <a href="tel:+56998583626">+56 9 9858 3626</a>.';
     btn.disabled = false; btn.textContent = 'Enviar solicitud';
   }
 });
