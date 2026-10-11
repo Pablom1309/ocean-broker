@@ -19,6 +19,7 @@
 /* Formatos */
 .formats{display:grid;gap:clamp(56px,8vw,110px)}
 .fmt{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,72px);align-items:center}
+.fmt:nth-child(even){grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
 .fmt:nth-child(even) .fmt-img{order:2}
 .fmt-img{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -30px rgba(10,43,76,.5);background:#dfeef0}
 .fmt-img img{width:100%;height:100%;object-fit:cover}
@@ -177,7 +178,7 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
     <div class="wrap formats">
 
       <article class="fmt">
-        <div class="fmt-img"><img src="img/cat-hon.jpg" width="720" height="1280" alt="Dos salmones enteros eviscerados con cabeza, sobre hielo"></div>
+        <div class="fmt-img"><img src="img/hon-hielo.jpg" width="2400" height="3600" alt="Salmones atlánticos enteros con cabeza sobre hielo picado" style="object-position:50% 30%"></div>
         <div>
           <span class="code">HON</span>
           <h2>Entero con cabeza</h2>
@@ -192,7 +193,7 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
       </article>
 
       <article class="fmt">
-        <div class="fmt-img"><img src="img/cat-entero.jpg" width="960" height="1507" alt="Salmones enteros plateados en caja, listos para despacho"></div>
+        <div class="fmt-img"><img src="img/hg-hielo.jpg" width="1520" height="1900" alt="Salmones eviscerados sobre hielo picado"></div>
         <div>
           <span class="code">HG</span>
           <h2>Entero sin cabeza</h2>
