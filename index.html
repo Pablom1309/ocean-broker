@@ -7,113 +7,7 @@
 <meta name="description" content="Ocean Broker — Salmón premium desde el sur de Chile. Venta por mayor a todo Chile con calidad de exportación.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --fjord:#0A2B4C;      /* azul profundo de fiordo */
-  --fjord-2:#123E66;
-  --glacier:#BDEFE8;    /* menta glaciar (botones) */
-  --ice:#EEF9FA;        /* fondo hielo */
-  --salmon:#F07A4E;     /* acento carne de salmón */
-  --slate:#4B6478;
-  --white:#fff;
-  --r-lg:22px; --r-sm:999px;
-}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
-body{font:400 17px/1.6 "Instrument Sans",system-ui,sans-serif;color:var(--fjord);background:var(--ice)}
-img{display:block;max-width:100%}
-h1,h2,h3{font-family:Urbanist,sans-serif;line-height:1.05;letter-spacing:-.02em}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--salmon);outline-offset:3px;border-radius:6px}
-.wrap{width:min(1180px,100% - 32px);margin-inline:auto}
-
-/* Botones */
-.btn{display:inline-block;padding:.85em 1.6em;border-radius:var(--r-sm);font-weight:600;text-decoration:none;transition:transform .2s,background .2s}
-.btn:hover{transform:translateY(-2px)}
-.btn-ice{background:var(--glacier);color:var(--fjord)}
-.btn-ice:hover{background:#d5f6f1}
-.btn-ghost{border:2px solid rgba(255,255,255,.85);color:#fff}
-.btn-ghost:hover{background:rgba(255,255,255,.12)}
-.btn-dark{background:var(--fjord);color:#fff}
-
-/* Header */
-/* Transparente sobre la portada (logo blanco); al bajar se vuelve barra blanca (logo a color) */
-header{position:fixed;inset:0 0 auto;z-index:10;transition:background .3s,box-shadow .3s}
-header.solid{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);box-shadow:0 6px 24px -12px rgba(10,43,76,.35)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:24px;transition:padding .3s}
-header.solid .nav{padding:6px 0}
-.logo{display:block}
-.logo img{height:84px;width:auto;transition:height .3s;filter:drop-shadow(0 2px 10px rgba(0,30,60,.35))}
-header.solid .logo img{height:58px;filter:none}
-.logo .on-light,header.solid .logo .on-dark{display:none}
-header.solid .logo .on-light{display:block}
-.nav ul{display:flex;gap:32px;list-style:none;padding:0}
-.nav ul a{color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;padding-bottom:4px;border-bottom:2px solid transparent;text-shadow:0 1px 8px rgba(0,30,60,.4)}
-header.solid .nav ul a{color:var(--fjord);text-shadow:none}
-.nav ul a:hover,.nav ul a[aria-current]{border-color:currentColor}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-@media(max-width:860px){.nav ul{display:none}.nav .btn{font-size:.85rem;padding:.7em 1.1em}}
-
-/* Hero */
-.hero{position:relative;min-height:min(100vh,1000px);display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;background:#1b7f9a}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,40,72,.45) 0%,rgba(8,40,72,0) 28%,rgba(8,40,72,0) 70%,rgba(8,40,72,.35) 100%)}
-.hero-inner{position:relative;z-index:2;padding:150px 16px 100px}
-.hero h1{font-size:clamp(3.2rem,10.5vw,8.6rem);font-weight:800;text-shadow:0 4px 30px rgba(0,30,60,.45)}
-.hero .tag{font:700 clamp(1.4rem,2.6vw,2.1rem) Urbanist;margin-top:.35em;text-shadow:0 2px 14px rgba(0,30,60,.5)}
-.hero .sub{font-size:clamp(1.1rem,1.9vw,1.45rem);text-shadow:0 2px 14px rgba(0,30,60,.5)}
-.hero .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:34px}
-@media(prefers-reduced-motion:reduce){.btn,header,.nav,.logo img{transition:none}}
-
-/* Secciones de producto */
-section{padding:clamp(72px,10vw,130px) 0}
-.split{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,6vw,90px);align-items:center}
-.split.rev .media{order:2}
-@media(max-width:820px){.split{grid-template-columns:1fr}.split.rev .media{order:0}}
-.media{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/3;background:#cfe7ea;box-shadow:0 30px 60px -30px rgba(10,43,76,.45)}
-.media img{width:100%;height:100%;object-fit:cover}
-.media-salmon{aspect-ratio:416/482;max-width:430px;justify-self:center;width:100%}
-.copy h2{font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:800;margin-bottom:.45em}
-.copy p{color:var(--slate);max-width:52ch;margin-bottom:1.6em}
-.copy ul{color:var(--slate);padding-left:1.1em;margin:-.6em 0 1.6em}
-.copy li::marker{color:var(--salmon)}
-.alt{background:var(--white)}
-
-/* Sellos */
-.seals{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;text-align:center}
-.seal svg{width:58px;height:58px;margin:0 auto 14px;color:var(--fjord-2)}
-.seal h3{font-size:1.15rem;margin-bottom:.3em}
-.seal p{font-size:.92rem;color:var(--slate)}
-@media(max-width:820px){.seals{grid-template-columns:repeat(2,1fr)}}
-
-/* Proceso — secuencia real */
-.process{background:var(--fjord);color:#fff}
-.process h2{font-size:clamp(2.2rem,4.5vw,3.4rem);margin-bottom:48px;max-width:16ch}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;list-style:none;padding:0;counter-reset:s}
-.steps li{counter-increment:s;border-top:2px solid rgba(189,239,232,.4);padding-top:20px}
-.steps li::before{content:counter(s);font:800 2.6rem Urbanist;color:var(--salmon);display:block;margin-bottom:6px}
-.steps h3{font-size:1.25rem;margin-bottom:.35em}
-.steps p{color:#b7cadb;font-size:.95rem}
-@media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
-
-/* Cotización */
-/* Misma foto de portada, desenfocada y teñida de azul fiordo para que el texto mande */
-.quote{position:relative;overflow:hidden;isolation:isolate;color:#fff;text-align:center;background:var(--fjord)}
-.quote::before{content:"";position:absolute;inset:-40px;z-index:-2;background:url("img/portada.webp") 60% 55%/cover;filter:blur(6px) saturate(1.1)}
-.quote::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,43,76,.78),rgba(10,43,76,.6))}
-.quote h2{font-size:clamp(2.2rem,5vw,3.8rem);margin-bottom:.4em}
-.quote p{max-width:48ch;margin:0 auto 2em;opacity:.9}
-
-/* Footer */
-footer{background:#071f38;color:#c5d6e4;padding:64px 0 28px;font-size:.95rem}
-.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
-footer h3{color:#fff;font-size:1.05rem;margin-bottom:.8em}
-footer a{text-decoration:none}footer a:hover{color:#fff}
-.social{display:flex;gap:14px;margin-top:14px}
-.social a{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08)}
-.legal{border-top:1px solid rgba(255,255,255,.1);margin-top:48px;padding-top:22px;font-size:.85rem;opacity:.7}
-@media(max-width:820px){.fgrid{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -126,7 +20,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
     <ul>
       <li><a href="#inicio" aria-current="page">Inicio</a></li>
       <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#productos">Productos</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
       <li><a href="#proceso">Proceso</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
@@ -142,7 +36,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       <p class="tag">Salmón premium</p>
       <p class="sub">Desde el sur de Chile</p>
       <div class="ctas">
-        <a class="btn btn-ice" href="#productos">Ver catálogo</a>
+        <a class="btn btn-ice" href="catalogo.html">Ver catálogo</a>
         <a class="btn btn-ghost" href="#contacto">Contacto</a>
       </div>
     </div>
@@ -154,7 +48,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
       <div class="copy">
         <h2>Calidad exportación</h2>
         <p>Salmón Atlántico y Coho criado en las aguas frías de Los Lagos y Aysén. Cada lote se procesa en planta certificada, se enfría en menos de 4 horas y viaja con trazabilidad completa desde el centro de cultivo hasta tu bodega.</p>
-        <a class="btn btn-ice" href="#cotizar">Ver catálogo</a>
+        <a class="btn btn-ice" href="catalogo.html">Ver catálogo</a>
       </div>
     </div>
   </section>
@@ -179,7 +73,7 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
           <li>Filete con o sin piel, porciones, entero HON</li>
           <li>Despacho refrigerado puerta a puerta a todo Chile</li>
         </ul>
-        <a class="btn btn-ice" href="#cotizar">Ver catálogo</a>
+        <a class="btn btn-ice" href="catalogo.html">Ver catálogo</a>
       </div>
     </div>
   </section>

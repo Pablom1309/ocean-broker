@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catálogo · Ocean Broker</title>
+<meta name="description" content="Formatos de salmón Ocean Broker para venta por mayor en Chile: entero HON y HG, filetes Trim A a E, calidad premium e industrial.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Encabezado de página: franja de filete a sangre, oscurecida para el texto */
+.page-top{position:relative;color:#fff;padding:190px 0 90px;overflow:hidden;isolation:isolate;background:var(--fjord)}
+.page-top::before{content:"";position:absolute;inset:0;z-index:-2;background:url("img/cat-filete.jpg") center 40%/cover}
+.page-top::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,43,76,.92) 0%,rgba(10,43,76,.7) 55%,rgba(10,43,76,.25) 100%)}
+.page-top h1{font-size:clamp(2.8rem,7vw,5.4rem);font-weight:800;max-width:12ch}
+.page-top p{max-width:54ch;margin-top:1em;font-size:1.12rem;color:#d9e8f2}
+
+/* Formatos */
+.formats{display:grid;gap:clamp(56px,8vw,110px)}
+.fmt{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,72px);align-items:center}
+.fmt:nth-child(even) .fmt-img{order:2}
+.fmt-img{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;box-shadow:0 30px 60px -30px rgba(10,43,76,.5);background:#dfeef0}
+.fmt-img img{width:100%;height:100%;object-fit:cover}
+.fmt .code{display:inline-block;font:800 1rem Urbanist;background:var(--fjord);color:var(--glacier);padding:.3em .8em;border-radius:8px;margin-bottom:14px}
+.fmt h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:.4em}
+.fmt p{color:var(--slate);max-width:56ch}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0 28px}
+.specs div{background:var(--white);border:1px solid #d3e6ea;border-radius:12px;padding:12px 14px}
+.specs dt{font-size:.82rem;color:var(--slate)}
+.specs dd{margin:0;font-weight:600}
+@media(max-width:820px){.fmt{grid-template-columns:1fr}.fmt:nth-child(even) .fmt-img{order:0}.fmt-img{aspect-ratio:4/3}}
+
+/* Tabla de trims */
+.trims h2,.grades h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:.35em}
+.trims .lead,.grades .lead{color:var(--slate);max-width:62ch;margin-bottom:36px}
+.table-wrap{overflow-x:auto;border-radius:var(--r-lg);background:var(--white);box-shadow:0 20px 50px -30px rgba(10,43,76,.4)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:.95rem}
+th,td{padding:14px 12px;text-align:center;border-bottom:1px solid #e3eef1}
+thead th{background:var(--fjord);color:#fff;font:700 1.05rem Urbanist}
+thead th:first-child{text-align:left}
+tbody th{text-align:left;font-weight:500;color:var(--fjord)}
+td.y{color:#1f8a6d;font-weight:700}
+td.n{color:#b9c7d1}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+.note{font-size:.9rem;color:var(--slate);margin-top:14px}
+
+/* Calidades */
+.grade-list{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.grade{background:var(--white);border-radius:var(--r-lg);padding:30px;border-top:5px solid var(--salmon)}
+.grade.ind{border-top-color:var(--fjord-2)}
+.grade h3{font-size:1.6rem;margin-bottom:.4em}
+.grade p{color:var(--slate)}
+.grade ul{color:var(--slate);margin-top:12px;padding-left:1.1em}
+@media(max-width:820px){.grade-list{grid-template-columns:1fr}}
+
+.ctas-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn-wa{background:#25D366;color:#073b1f}
+</style>
+</head>
+<body>
+
+<header class="solid">
+  <nav class="wrap nav" aria-label="Principal">
+    <a class="logo" href="index.html" aria-label="Ocean Broker, inicio">
+      <img class="on-dark" src="img/logo-blanco.png" alt="">
+      <img class="on-light" src="img/logo.png" alt="">
+    </a>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#nosotros">Nosotros</a></li>
+      <li><a href="catalogo.html" aria-current="page">Catálogo</a></li>
+      <li><a href="index.html#proceso">Proceso</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a class="btn btn-ice" href="#cotizar">Solicitar cotización</a>
+  </nav>
+</header>
+
+<main>
+  <section class="page-top">
+    <div class="wrap">
+      <h1>Catálogo de salmón</h1>
+      <p>Salmón del sur de Chile en los formatos que usa la industria: entero con o sin cabeza, y filete en cinco niveles de corte. Elige formato, calidad y calibre, y te cotizamos por caja.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap formats">
+
+      <article class="fmt">
+        <div class="fmt-img"><img src="img/cat-hon.jpg" width="720" height="1280" alt="Dos salmones enteros eviscerados con cabeza, sobre hielo"></div>
+        <div>
+          <span class="code">HON</span>
+          <h2>Entero con cabeza</h2>
+          <p>Head On Gutted: salmón entero, eviscerado y lavado, con cabeza. Es el formato más cercano a la cosecha y el que permite al comprador aprovechar el pescado completo: filetear, porcionar o vender entero en mesón.</p>
+          <dl class="specs">
+            <div><dt>Presentación</dt><dd>Fresco en hielo</dd></div>
+            <div><dt>Calibres</dt><dd>2–3, 3–4, 4–5, 5–6, 6+ kg</dd></div>
+            <div><dt>Ideal para</dt><dd>Pescaderías, ferias, plantas</dd></div>
+          </dl>
+          <a class="btn btn-ice" href="#cotizar">Cotizar HON</a>
+        </div>
+      </article>
+
+      <article class="fmt">
+        <div class="fmt-img"><img src="img/cat-entero.jpg" width="960" height="1507" alt="Salmones enteros plateados en caja, listos para despacho"></div>
+        <div>
+          <span class="code">HG</span>
+          <h2>Entero sin cabeza</h2>
+          <p>Head Off Gutted: eviscerado y sin cabeza, con corte limpio bajo la clavícula. Ocupa menos espacio en caja, tiene mejor rendimiento por kilo pagado y llega listo para filetear.</p>
+          <dl class="specs">
+            <div><dt>Presentación</dt><dd>Fresco en hielo</dd></div>
+            <div><dt>Calibres</dt><dd>2–3, 3–4, 4–5, 5–6, 6+ kg</dd></div>
+            <div><dt>Ideal para</dt><dd>Restaurantes, distribuidores</dd></div>
+          </dl>
+          <a class="btn btn-ice" href="#cotizar">Cotizar HG</a>
+        </div>
+      </article>
+
+      <article class="fmt">
+        <div class="fmt-img"><img src="img/cat-filete.jpg" width="960" height="836" alt="Filetes de salmón con piel, carne naranja con vetas de grasa marcadas"></div>
+        <div>
+          <span class="code">Trim A–E</span>
+          <h2>Filete</h2>
+          <p>Filete de salmón con o sin piel, cortado según el nivel de trim que necesites. Mientras más avanzado el trim, más limpio llega el filete y menos trabajo queda en tu cocina o planta.</p>
+          <dl class="specs">
+            <div><dt>Presentación</dt><dd>Fresco o congelado</dd></div>
+            <div><dt>Calibres</dt><dd>1–2, 2–3, 3–4, 4+ lb</dd></div>
+            <div><dt>Ideal para</dt><dd>Sushi, retail, food service</dd></div>
+          </dl>
+          <a class="btn btn-ice" href="#trims">Ver niveles de trim</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="alt trims" id="trims">
+    <div class="wrap">
+      <h2>Niveles de trim del filete</h2>
+      <p class="lead">Cada trim incluye todo lo del anterior y suma un corte más. El Trim A es el filete más básico; el Trim E llega sin espinas, sin grasa recortable y sin piel.</p>
+      <div class="table-wrap" role="region" aria-label="Tabla de trims" tabindex="0">
+        <table>
+          <thead>
+            <tr><th scope="col">Qué se retira</th><th scope="col">Trim A</th><th scope="col">Trim B</th><th scope="col">Trim C</th><th scope="col">Trim D</th><th scope="col">Trim E</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Espinazo</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Costillas (huesos de la panza)</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Aleta dorsal</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Clavícula</th><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Huesos dorsales</th><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Grasa ventral</th><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Espinas (pin bones)</th><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Grasa dorsal y borde de panza</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Cola recortada y membrana</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td><td class="y">✓</td></tr>
+            <tr><th scope="row">Piel</th><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="y">✓</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">Las especificaciones pueden variar levemente según la planta de proceso. Con cada cotización enviamos la ficha técnica del lote.</p>
+    </div>
+  </section>
+
+  <section class="grades">
+    <div class="wrap">
+      <h2>Calidades</h2>
+      <p class="lead">La calidad se define por el aspecto exterior del pescado. El color, la textura y el sabor de la carne son los mismos; cambia la presentación y el precio.</p>
+      <div class="grade-list">
+        <div class="grade">
+          <h3>Premium</h3>
+          <p>Pescado sin daños visibles en piel ni forma, color de carne parejo y buen calibre. Es la calidad para vender entero o en filete con piel a la vista del cliente.</p>
+          <ul><li>Piel intacta y brillante</li><li>Forma y color uniformes</li><li>Para mesón, sushi y retail</li></ul>
+        </div>
+        <div class="grade ind">
+          <h3>Industrial</h3>
+          <p>Pescado con detalles externos —marcas en la piel, pequeñas deformaciones o golpes— que no afectan la carne. Rinde igual en proceso y tiene mejor precio por kilo.</p>
+          <ul><li>Carne apta para todo uso</li><li>Ideal para porcionar, ahumar o cocinar</li><li>Mejor precio por volumen</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote" id="cotizar">
+    <div class="wrap">
+      <h2>Cotiza tu próximo pedido</h2>
+      <p>Indícanos formato, trim, calidad, calibre y cantidad de cajas. Te respondemos con precio y fecha de despacho en menos de 24 horas.</p>
+      <div class="ctas-row" style="justify-content:center">
+        <a class="btn btn-wa" href="https://wa.me/56998583626?text=Hola%2C%20quiero%20cotizar%20salm%C3%B3n">Cotizar por WhatsApp</a>
+        <a class="btn btn-ice" href="mailto:m.corretajepesca@gmail.com?subject=Cotizaci%C3%B3n%20salm%C3%B3n">Cotizar por correo</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contacto">
+  <div class="wrap fgrid">
+    <div>
+      <a class="logo" href="index.html" style="display:inline-block;margin-bottom:16px"><img src="img/logo-blanco.png" alt="Ocean Broker" style="height:80px"></a>
+      <p style="max-width:34ch">Salmón premium desde el sur de Chile para compradores mayoristas de todo Chile.</p>
+    </div>
+    <div>
+      <h3>Contacto</h3>
+      <p><a href="mailto:m.corretajepesca@gmail.com">m.corretajepesca@gmail.com</a></p>
+      <p><a href="tel:+56998583626">+56 9 9858 3626</a></p>
+    </div>
+    <div>
+      <h3>Dirección en Chile</h3>
+      <p>Puerto Montt, Región de Los Lagos</p>
+    </div>
+  </div>
+  <p class="wrap legal">© 2026 Ocean Broker. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
