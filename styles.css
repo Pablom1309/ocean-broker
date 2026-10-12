@@ -28,7 +28,8 @@ a{color:inherit}
 
 /* Header */
 /* Transparente sobre la portada (logo blanco); al bajar se vuelve barra blanca (logo a color) */
-header{position:fixed;inset:0 0 auto;z-index:10;transition:background .3s,box-shadow .3s}
+header{position:fixed;inset:0 0 auto;z-index:10;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,box-shadow .3s}
+header.hide{transform:translateY(-100%);box-shadow:none}
 header.solid{background:#fff;box-shadow:0 6px 24px -12px rgba(10,43,76,.35)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:24px;transition:padding .3s}
 header.solid .nav{padding:6px 0}
