@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cotizar · Ocean Broker</title>
-<meta name="description" content="Solicita una cotización de salmón por mayor: formato, trim, calidad, calibre y cantidad. Respondemos en menos de 24 horas.">
+<meta name="description" content="Solicita una cotización de salmón por mayor: calidad y cantidad. Respondemos en menos de 24 horas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -105,24 +105,6 @@ textarea{min-height:110px;resize:vertical}
 
           <fieldset>
             <legend>Producto</legend>
-            <span class="choice-label" id="lbl-formato">Formato</span>
-            <div class="choices" role="radiogroup" aria-labelledby="lbl-formato">
-              <input type="radio" name="Formato" id="f-hon" value="HON (entero con cabeza)" checked><label for="f-hon">HON <small>con cabeza</small></label>
-              <input type="radio" name="Formato" id="f-hg" value="HG (entero sin cabeza)"><label for="f-hg">HG <small>sin cabeza</small></label>
-              <input type="radio" name="Formato" id="f-fil" value="Filete"><label for="f-fil">Filete</label>
-            </div>
-
-            <div class="trim-box" id="trimBox" hidden>
-              <span class="choice-label" id="lbl-trim">Trim del filete</span>
-              <div class="choices" role="radiogroup" aria-labelledby="lbl-trim">
-                <input type="radio" name="Trim" id="t-a" value="Trim A"><label for="t-a">A <small>básico</small></label>
-                <input type="radio" name="Trim" id="t-b" value="Trim B" checked><label for="t-b">B <small>estándar</small></label>
-                <input type="radio" name="Trim" id="t-c" value="Trim C"><label for="t-c">C <small>sin espinas</small></label>
-                <input type="radio" name="Trim" id="t-d" value="Trim D"><label for="t-d">D <small>limpio</small></label>
-                <input type="radio" name="Trim" id="t-e" value="Trim E"><label for="t-e">E <small>sin piel</small></label>
-              </div>
-            </div>
-
             <span class="choice-label" id="lbl-cal">Calidad</span>
             <div class="choices" role="radiogroup" aria-labelledby="lbl-cal">
               <input type="radio" name="Calidad" id="c-p" value="Premium" checked><label for="c-p">Premium</label>
@@ -132,24 +114,16 @@ textarea{min-height:110px;resize:vertical}
 
             <div class="row">
               <div class="field">
-                <label for="calibre">Calibre <span class="opt">(opcional)</span></label>
-                <select id="calibre" name="Calibre">
-                  <option value="Sin preferencia">Sin preferencia</option>
-                  <option>2–3 kg</option><option>3–4 kg</option><option>4–5 kg</option><option>5–6 kg</option><option>6+ kg</option>
-                  <option>Filete 1–2 lb</option><option>Filete 2–3 lb</option><option>Filete 3–4 lb</option><option>Filete 4+ lb</option>
-                </select>
-              </div>
-              <div class="field">
                 <label for="cantidad">Cantidad aproximada</label>
                 <input id="cantidad" name="Cantidad" placeholder="Ej: 500 kg o 20 cajas" required>
                 <span class="err-msg">Indica una cantidad aproximada.</span>
               </div>
-            </div>
-            <div class="field">
-              <label for="frecuencia">Frecuencia de compra</label>
-              <select id="frecuencia" name="Frecuencia">
-                <option>Pedido único</option><option>Semanal</option><option>Quincenal</option><option>Mensual</option>
-              </select>
+              <div class="field">
+                <label for="frecuencia">Frecuencia de compra</label>
+                <select id="frecuencia" name="Frecuencia">
+                  <option>Pedido único</option><option>Semanal</option><option>Quincenal</option><option>Mensual</option>
+                </select>
+              </div>
             </div>
           </fieldset>
 
@@ -211,7 +185,7 @@ textarea{min-height:110px;resize:vertical}
         <div class="side-card">
           <h3>Qué pasa después</h3>
           <ol>
-            <li>Revisamos disponibilidad para tu formato y calibre.</li>
+            <li>Revisamos disponibilidad para tu pedido.</li>
             <li>Te enviamos precio, ficha técnica y fecha de despacho.</li>
             <li>Confirmas y coordinamos la entrega refrigerada.</li>
           </ol>
@@ -243,13 +217,6 @@ textarea{min-height:110px;resize:vertical}
 // Envío por FormSubmit: llega al correo de la empresa sin servidor propio.
 const ENDPOINT = 'https://formsubmit.co/ajax/m.corretajepesca@gmail.com';
 const form = document.getElementById('quoteForm'), statusEl = document.getElementById('status'), btn = document.getElementById('sendBtn');
-const trimBox = document.getElementById('trimBox');
-
-// Preselecciona el formato si viene desde el catálogo (?formato=hon|hg|filete)
-const pre = new URLSearchParams(location.search).get('formato');
-if (pre) { const el = document.getElementById({hon:'f-hon',hg:'f-hg',filete:'f-fil'}[pre]); if (el) el.checked = true; }
-const syncTrim = () => { trimBox.hidden = !document.getElementById('f-fil').checked; };
-form.querySelectorAll('input[name="Formato"]').forEach(r => r.addEventListener('change', syncTrim)); syncTrim();
 
 function validate() {
   let first = null;
@@ -270,8 +237,7 @@ form.addEventListener('submit', async e => {
   if (!validate()) return;
   const data = Object.fromEntries(new FormData(form));
   if (data._honey) return;                       // bot
-  if (!document.getElementById('f-fil').checked) delete data.Trim;
-  data._subject = 'Nueva cotización web · ' + data.Formato + ' · ' + data.Nombre;
+  data._subject = 'Nueva cotización web · ' + data.Nombre;
   data._template = 'table';
   data._replyto = data.email;
   btn.disabled = true; btn.textContent = 'Enviando…';
