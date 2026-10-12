@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cotizar · Ocean Broker</title>
-<meta name="description" content="Solicita una cotización de salmón por mayor: calidad y cantidad. Respondemos en menos de 24 horas.">
+<meta name="description" content="Solicita una cotización de salmón por mayor.Respondemos en menos de 24 horas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
@@ -104,30 +104,6 @@ textarea{min-height:110px;resize:vertical}
           <p class="hint">Los campos marcados como opcionales puedes dejarlos en blanco.</p>
 
           <fieldset>
-            <legend>Producto</legend>
-            <span class="choice-label" id="lbl-cal">Calidad</span>
-            <div class="choices" role="radiogroup" aria-labelledby="lbl-cal">
-              <input type="radio" name="Calidad" id="c-p" value="Premium" checked><label for="c-p">Premium</label>
-              <input type="radio" name="Calidad" id="c-i" value="Industrial"><label for="c-i">Industrial</label>
-              <input type="radio" name="Calidad" id="c-n" value="Necesito asesoría"><label for="c-n">No estoy seguro</label>
-            </div>
-
-            <div class="row">
-              <div class="field">
-                <label for="cantidad">Cantidad aproximada</label>
-                <input id="cantidad" name="Cantidad" placeholder="Ej: 500 kg o 20 cajas" required>
-                <span class="err-msg">Indica una cantidad aproximada.</span>
-              </div>
-              <div class="field">
-                <label for="frecuencia">Frecuencia de compra</label>
-                <select id="frecuencia" name="Frecuencia">
-                  <option>Pedido único</option><option>Semanal</option><option>Quincenal</option><option>Mensual</option>
-                </select>
-              </div>
-            </div>
-          </fieldset>
-
-          <fieldset>
             <legend>Tus datos</legend>
             <div class="row">
               <div class="field">
@@ -152,23 +128,13 @@ textarea{min-height:110px;resize:vertical}
                 <span class="err-msg">Escribe un teléfono de contacto.</span>
               </div>
             </div>
-            <div class="row">
-              <div class="field">
-                <label for="region">Región de entrega</label>
-                <select id="region" name="Región" required>
-                  <option value="">Selecciona una región</option>
-                  <option>Arica y Parinacota</option><option>Tarapacá</option><option>Antofagasta</option><option>Atacama</option><option>Coquimbo</option><option>Valparaíso</option><option>Metropolitana</option><option>O'Higgins</option><option>Maule</option><option>Ñuble</option><option>Biobío</option><option>La Araucanía</option><option>Los Ríos</option><option>Los Lagos</option><option>Aysén</option><option>Magallanes</option>
-                </select>
-                <span class="err-msg">Elige la región donde recibes el pedido.</span>
-              </div>
-              <div class="field">
-                <label for="comuna">Comuna <span class="opt">(opcional)</span></label>
-                <input id="comuna" name="Comuna" autocomplete="address-level2">
-              </div>
+            <div class="field">
+              <label for="comuna">Comuna <span class="opt">(opcional)</span></label>
+              <input id="comuna" name="Comuna" autocomplete="address-level2">
             </div>
             <div class="field">
               <label for="mensaje">Comentarios <span class="opt">(opcional)</span></label>
-              <textarea id="mensaje" name="Comentarios" placeholder="Fecha en que lo necesitas, tipo de negocio, otras especificaciones…"></textarea>
+              <textarea id="mensaje" name="Comentarios" placeholder="Qué producto necesitas, fecha, tipo de negocio, otras especificaciones…"></textarea>
             </div>
           </fieldset>
 
