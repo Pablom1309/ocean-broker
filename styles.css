@@ -29,7 +29,7 @@ a{color:inherit}
 /* Header */
 /* Transparente sobre la portada (logo blanco); al bajar se vuelve barra blanca (logo a color) */
 header{position:fixed;inset:0 0 auto;z-index:10;transition:background .3s,box-shadow .3s}
-header.solid{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);box-shadow:0 6px 24px -12px rgba(10,43,76,.35)}
+header.solid{background:#fff;box-shadow:0 6px 24px -12px rgba(10,43,76,.35)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:24px;transition:padding .3s}
 header.solid .nav{padding:6px 0}
 .logo{display:block}

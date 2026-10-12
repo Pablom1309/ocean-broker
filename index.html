@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<header>
+<header class="solid">
   <nav class="wrap nav" aria-label="Principal">
     <a class="logo" href="#inicio" aria-label="Ocean Broker, inicio">
       <img class="on-dark" src="img/logo-blanco.png" alt="">
@@ -121,10 +121,5 @@
   </div>
   <p class="wrap legal">© 2026 Ocean Broker. Todos los derechos reservados.</p>
 </footer>
-<script>
-  const hdr=document.querySelector('header'),hero=document.getElementById('inicio');
-  const upd=()=>hdr.classList.toggle('solid',scrollY>hero.offsetHeight-90);
-  addEventListener('scroll',upd,{passive:true});upd();
-</script>
 </body>
 </html>
