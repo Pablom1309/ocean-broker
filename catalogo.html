@@ -96,6 +96,11 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 .level{display:flex;gap:5px;margin:4px 0 12px}
 .level i{height:5px;flex:1;border-radius:3px;background:#cfe0e6}
 .level i.on{background:var(--salmon)}
+.rm-label{font:700 .8rem "Instrument Sans";color:var(--fjord);margin:2px 0 8px}
+.rm-label span{font-weight:400;color:var(--slate)}
+.rm{list-style:none;padding:0;margin:0 0 4px;display:flex;flex-wrap:wrap;gap:6px}
+.rm li{background:#fff1ea;color:#a8401c;border:1px solid #f6cdb9;border-radius:999px;padding:4px 11px;font-size:.84rem;font-weight:600}
+.rm li::before{content:"− ";font-weight:700}
 .cut .keep{margin-top:auto;padding-top:14px;font-size:.88rem;color:var(--fjord-2);font-weight:600}
 @media(max-width:980px){.trim-grid{grid-template-columns:1fr 1fr}.trim-grid .cut,.trim-grid .cut:nth-child(4),.trim-grid .cut:nth-child(5){grid-column:auto}}
 @media(max-width:700px){.guide-head,.whole,.trim-grid{grid-template-columns:1fr}}
@@ -158,14 +163,16 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
           <figure><img src="img/g-trim-a.jpg" width="1072" height="360" alt="Filete Trim A con piel y espinas laterales"></figure>
           <div class="tagline"><span class="k">Trim A</span><span class="n">Básico</span></div>
           <div class="level" aria-label="Nivel de limpieza 1 de 5"><i class="on"></i><i></i><i></i><i></i><i></i></div>
-          <p>Sin espinazo ni costillas. Es el filete tal como sale del fileteo.</p>
+          <p class="rm-label">Se retira</p>
+          <ul class="rm"><li>Espinazo</li><li>Costillas</li></ul>
           <p class="keep">Mantiene: aleta dorsal, hueso del cuello, trozo de cola, panza, espinas laterales, restos de aletas y grasa de los bordes, membrana ventral y piel</p>
         </article>
         <article class="cut">
           <figure><img src="img/g-trim-b.jpg" width="1100" height="504" alt="Filete Trim B junto a las aletas, el hueso del cuello y la grasa del vientre que se le retiraron"></figure>
           <div class="tagline"><span class="k">Trim B</span><span class="n">Estándar</span></div>
           <div class="level" aria-label="Nivel de limpieza 2 de 5"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></div>
-          <p>Todo lo del Trim A, y además sin aleta dorsal, hueso del cuello, trozo de cola ni panza.</p>
+          <p class="rm-label">Se retira <span>(además de lo del Trim A)</span></p>
+          <ul class="rm"><li>Aleta dorsal</li><li>Hueso del cuello</li><li>Trozo de cola</li><li>Panza</li></ul>
           <p class="keep">Mantiene: espinas laterales, restos de aletas y grasa de los bordes, membrana ventral y piel</p>
           <p class="removed">Junto al filete: la aleta dorsal, el trozo de cola y la panza que se le retiraron.</p>
         </article>
@@ -173,7 +180,8 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
           <figure><img src="img/g-trim-c.jpg?v=4" width="1060" height="360" alt="Filete Trim C sin espinas laterales"></figure>
           <div class="tagline"><span class="k">Trim C</span><span class="n">Sin espinas</span></div>
           <div class="level" aria-label="Nivel de limpieza 3 de 5"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></div>
-          <p>Todo lo del Trim B, y además sin espinas laterales (pin bones).</p>
+          <p class="rm-label">Se retira <span>(además de lo del Trim B)</span></p>
+          <ul class="rm"><li>Espinas laterales (pin bones)</li></ul>
           <p class="keep">Mantiene: restos de aletas y grasa de los bordes, membrana ventral y piel</p>
           <p class="removed">Mismo filete que el Trim B: las espinas laterales se sacan una a una desde dentro de la carne, por eso por fuera no cambia.</p>
         </article>
@@ -181,14 +189,16 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
           <figure><img src="img/g-trim-d.jpg?v=3" width="1008" height="388" alt="Filete Trim D completamente recortado"></figure>
           <div class="tagline"><span class="k">Trim D</span><span class="n">Totalmente limpio</span></div>
           <div class="level" aria-label="Nivel de limpieza 4 de 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i></i></div>
-          <p>Todo lo del Trim C, y además recortado completo: sin restos de aletas, sin grasa de los bordes y sin membrana ventral.</p>
+          <p class="rm-label">Se retira <span>(además de lo del Trim C)</span></p>
+          <ul class="rm"><li>Restos de aletas</li><li>Grasa de los bordes</li><li>Membrana ventral (peritoneo)</li></ul>
           <p class="keep">Mantiene: piel</p>
         </article>
         <article class="cut">
           <figure><img src="img/g-trim-e.jpg?v=3" width="1008" height="388" alt="Filete Trim E totalmente limpio y sin piel"></figure>
           <div class="tagline"><span class="k">Trim E</span><span class="n">Sin piel</span></div>
           <div class="level" aria-label="Nivel de limpieza 5 de 5"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></div>
-          <p>Todo lo del Trim D, y además sin piel.</p>
+          <p class="rm-label">Se retira <span>(además de lo del Trim D)</span></p>
+          <ul class="rm"><li>Piel</li></ul>
           <p class="keep">Listo para porcionar</p>
           <p class="removed">Mismo corte que el Trim D, con la piel ya retirada por debajo.</p>
         </article>
