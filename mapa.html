@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0A2B4C">
+  <title>Mapa de clientes · Ocean Broker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@700;800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="mapa.css">
+</head>
+<body>
+  <form id="acceso" class="acceso" hidden>
+    <div class="acceso-caja">
+      <p class="marca">Ocean Broker</p>
+      <h1>Mapa de clientes<br>comuna de Santiago</h1>
+      <label for="usuario">Usuario</label>
+      <input id="usuario" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      <label for="clave">Clave</label>
+      <input id="clave" type="password" autocomplete="current-password" required>
+      <p id="acceso-error" class="error" role="alert"></p>
+      <button class="boton primario" type="submit">Entrar</button>
+    </div>
+  </form>
+
+  <div id="app" class="app" hidden>
+    <header class="barra">
+      <div class="titulo">
+        <span class="marca">Ocean Broker</span>
+        <strong>Clientes · Santiago</strong>
+      </div>
+      <div id="avance" class="avance" aria-live="polite"></div>
+      <button id="btn-menu" class="icono" type="button" aria-label="Más opciones" aria-haspopup="true" aria-expanded="false">⋯</button>
+      <div id="menu" class="menu" hidden>
+        <button type="button" data-accion="actualizar">Actualizar locales</button>
+        <button type="button" data-accion="exportar">Exportar a Excel (CSV)</button>
+        <button type="button" data-accion="salir">Cerrar sesión</button>
+      </div>
+    </header>
+
+    <div class="filtros">
+      <div class="busqueda">
+        <input id="buscar" type="search" placeholder="Buscar local o calle…" aria-label="Buscar local o calle">
+        <select id="rubro" aria-label="Filtrar por rubro"></select>
+      </div>
+      <div id="chips" class="chips" role="group" aria-label="Filtrar por estado"></div>
+    </div>
+
+    <main class="cuerpo">
+      <aside id="panel" class="panel">
+        <div id="lista" class="lista"></div>
+        <div id="ficha" class="ficha" hidden></div>
+      </aside>
+      <div class="mapa-caja">
+        <div id="mapa"></div>
+        <div id="aviso-mapa" class="aviso-mapa" hidden></div>
+        <div class="flotantes">
+          <button id="btn-ubicacion" class="flotante" type="button" aria-label="Mi ubicación" title="Mi ubicación">◎</button>
+          <button id="btn-agregar" class="flotante" type="button" aria-label="Agregar local" title="Agregar local">＋</button>
+        </div>
+        <button id="btn-lista" class="boton ver-lista" type="button">Ver lista</button>
+      </div>
+    </main>
+  </div>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="mapa.js"></script>
+</body>
+</html>
