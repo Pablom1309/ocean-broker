@@ -20,7 +20,6 @@ const RUBROS = [
 
 function rubroDe(t) {
   if (/seafood|fishmonger/.test(t.shop || '') || (t.shop && /pescad|marisc|salm[oó]n/i.test(t.name || ''))) return 'pescaderia';
-  if (t.tourism === 'hotel') return 'hotel';
   for (const [id, cocina, nombre] of RUBROS) {
     if (cocina.test(t.cuisine || '') || (nombre && nombre.test(t.name || ''))) return id;
   }
@@ -37,7 +36,6 @@ function consulta() {
     `nwr${comida}["name"~"sushi|maki|nikkei|temaki|sashimi|nigiri|roll|poke|cevich|peruan|marisc|pescad",i];` +
     'nwr["shop"~"seafood|fishmonger"];' +
     'nwr["shop"]["name"~"sushi|pescad|marisc|salm",i];' +
-    'nwr["tourism"="hotel"];' +
     ');out center tags;';
 }
 

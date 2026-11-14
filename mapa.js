@@ -9,7 +9,7 @@
   ];
   const RUBROS = [
     ['sushi', 'Sushi y japonés'], ['peruano', 'Peruano'], ['mariscos', 'Pescados y mariscos'], ['poke', 'Poke'],
-    ['asiatico', 'Asiático'], ['internacional', 'Internacional'], ['pescaderia', 'Pescadería'], ['hotel', 'Hotel'], ['otro', 'Otro'],
+    ['asiatico', 'Asiático'], ['internacional', 'Internacional'], ['pescaderia', 'Pescadería'], ['otro', 'Otro'],
   ];
   const NOMBRE_RUBRO = Object.fromEntries(RUBROS);
   const COLOR = Object.fromEntries(ESTADOS.map((e) => [e.id, e.color]));

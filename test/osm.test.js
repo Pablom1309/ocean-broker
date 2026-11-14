@@ -18,7 +18,7 @@ test('clasifica cada local en su rubro', () => {
   assert.equal(rubroDe({ amenity: 'restaurant', cuisine: 'thai' }), 'asiatico');
   assert.equal(rubroDe({ amenity: 'restaurant', cuisine: 'french' }), 'internacional');
   assert.equal(rubroDe({ shop: 'seafood' }), 'pescaderia');
-  assert.equal(rubroDe({ tourism: 'hotel', name: 'Hotel Plaza' }), 'hotel');
+  assert.equal(rubroDe({ tourism: 'hotel', name: 'Hotel Plaza' }), null);
   assert.equal(rubroDe({ amenity: 'restaurant', cuisine: 'pizza', name: 'Roma' }), null);
 });
 

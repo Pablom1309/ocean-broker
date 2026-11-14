@@ -5,7 +5,7 @@ Pagina Ocean Broker
 
 `/mapa.html` es una herramienta interna: un mapa de la comuna de Santiago con
 los locales que pueden comprar salmón (sushi, peruanos, pescados y mariscos,
-asiáticos, internacionales, pescaderías y hoteles). Permite marcar cada local
+asiáticos, internacionales y pescaderías). Permite marcar cada local
 como visitado y guardar notas de venta. Pide usuario y clave, y no está
 enlazada desde el sitio público.
 

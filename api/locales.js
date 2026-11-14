@@ -3,7 +3,7 @@ const { conClave, leerCuerpo, responder, error } = require('./_lib/http');
 const { dentroDeComuna } = require('./_lib/osm');
 
 const ESTADOS = ['pendiente', 'visitado', 'cliente', 'descartado'];
-const RUBROS = ['sushi', 'peruano', 'mariscos', 'poke', 'asiatico', 'internacional', 'pescaderia', 'hotel', 'otro'];
+const RUBROS = ['sushi', 'peruano', 'mariscos', 'poke', 'asiatico', 'internacional', 'pescaderia', 'otro'];
 const CAMPOS_PROPIOS = ['contacto', 'contacto_telefono', 'proveedor', 'consumo', 'precio', 'notas'];
 const CAMPOS_LOCAL = ['nombre', 'direccion', 'telefono', 'web'];
 
