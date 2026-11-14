@@ -9,7 +9,7 @@
   --r-lg:22px; --r-sm:999px;
 }
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{font:400 17px/1.6 "Instrument Sans",system-ui,sans-serif;color:var(--fjord);background:var(--ice)}
 img{display:block;max-width:100%}
 h1,h2,h3{font-family:Urbanist,sans-serif;line-height:1.05;letter-spacing:-.02em}
@@ -28,7 +28,7 @@ a{color:inherit}
 
 /* Header */
 /* Transparente sobre la portada (logo blanco); al bajar se vuelve barra blanca (logo a color) */
-header{position:fixed;inset:0 0 auto;z-index:10;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,box-shadow .3s}
+header{position:fixed;top:0;right:0;left:0;z-index:10;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,box-shadow .3s}
 header.hide{transform:translateY(-100%);box-shadow:none}
 header.solid{background:#fff;box-shadow:0 6px 24px -12px rgba(10,43,76,.35)}
 .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:24px;transition:padding .3s}
@@ -47,8 +47,8 @@ header.solid .nav ul a{color:var(--fjord);text-shadow:none}
 
 /* Hero */
 .hero{position:relative;min-height:min(100vh,1000px);display:grid;place-items:center;text-align:center;color:#fff;overflow:hidden;background:#1b7f9a}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,40,72,.45) 0%,rgba(8,40,72,0) 28%,rgba(8,40,72,0) 70%,rgba(8,40,72,.35) 100%)}
+.hero>img{position:absolute;top:0;right:0;bottom:0;left:0;width:100%;height:100%;object-fit:cover;object-position:60% 50%}
+.hero::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;background:linear-gradient(180deg,rgba(8,40,72,.45) 0%,rgba(8,40,72,0) 28%,rgba(8,40,72,0) 70%,rgba(8,40,72,.35) 100%)}
 .hero-inner{position:relative;z-index:2;padding:150px 16px 100px}
 .hero h1{font-size:clamp(3.2rem,10.5vw,8.6rem);font-weight:800;text-shadow:0 4px 30px rgba(0,30,60,.45)}
 .hero .tag{font:700 clamp(1.4rem,2.6vw,2.1rem) Urbanist;margin-top:.35em;text-shadow:0 2px 14px rgba(0,30,60,.5)}
@@ -90,8 +90,8 @@ section{padding:clamp(72px,10vw,130px) 0}
 /* Cotización */
 /* Misma foto de portada, desenfocada y teñida de azul fiordo para que el texto mande */
 .quote{position:relative;overflow:hidden;isolation:isolate;color:#fff;text-align:center;background:var(--fjord)}
-.quote::before{content:"";position:absolute;inset:-40px;z-index:-2;background:url("img/portada.webp") 60% 55%/cover;filter:blur(6px) saturate(1.1)}
-.quote::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,43,76,.78),rgba(10,43,76,.6))}
+.quote::before{content:"";position:absolute;top:-40px;right:-40px;bottom:-40px;left:-40px;z-index:-2;background:url("img/portada.webp") 60% 55%/cover;filter:blur(6px) saturate(1.1)}
+.quote::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;z-index:-1;background:linear-gradient(180deg,rgba(10,43,76,.78),rgba(10,43,76,.6))}
 .quote h2{font-size:clamp(2.2rem,5vw,3.8rem);margin-bottom:.4em}
 .quote p{max-width:48ch;margin:0 auto 2em;opacity:.9}
 
@@ -118,10 +118,10 @@ footer a{text-decoration:none}footer a:hover{color:#fff}
 .car-track{list-style:none;margin:0;padding:0 16px 24px 0;display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;outline-offset:6px}
 .car-track::-webkit-scrollbar{display:none}
 .slide{flex:0 0 auto;width:min-content;scroll-snap-align:start}
-.slide figure{margin:0 0 16px;border-radius:var(--r-lg);overflow:hidden;height:440px;background:#dfeef0;box-shadow:0 24px 50px -30px rgba(10,43,76,.5)}
-.slide img{height:100%;width:auto;max-width:none;transition:transform .5s}
+.slide figure{margin:0 0 16px;border-radius:var(--r-lg);overflow:hidden;background:#dfeef0;box-shadow:0 24px 50px -30px rgba(10,43,76,.5)}
+.slide img{height:440px;width:auto;max-width:none;transition:transform .5s}
 .slide:hover img{transform:scale(1.04)}
 .slide h3{font-size:1.2rem;margin-bottom:.25em}
 .slide p{color:var(--slate);font-size:.95rem}
-@media(max-width:640px){.ship-head{flex-direction:column;align-items:flex-start}.slide figure{height:360px}}
+@media(max-width:640px){.ship-head{flex-direction:column;align-items:flex-start}.slide img{height:360px}}
 @media(prefers-reduced-motion:reduce){.car-track{scroll-behavior:auto}.slide img{transition:none}}

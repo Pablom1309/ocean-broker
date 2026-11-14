@@ -11,8 +11,8 @@
 <style>
 /* Encabezado de página: filete fresco sobre hielo (alta resolución) */
 .page-top{position:relative;color:#fff;padding:190px 0 100px;overflow:hidden;isolation:isolate;background:var(--fjord)}
-.page-top::before{content:"";position:absolute;inset:0;z-index:-2;background:url("img/filete-hielo-ancho.jpg") 60% 58%/cover}
-.page-top::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,43,76,.9) 0%,rgba(10,43,76,.62) 50%,rgba(10,43,76,.08) 100%)}
+.page-top::before{content:"";position:absolute;top:0;right:0;bottom:0;left:0;z-index:-2;background:url("img/filete-hielo-ancho.jpg") 60% 58%/cover}
+.page-top::after{content:"";position:absolute;top:0;right:0;bottom:0;left:0;z-index:-1;background:linear-gradient(90deg,rgba(10,43,76,.9) 0%,rgba(10,43,76,.62) 50%,rgba(10,43,76,.08) 100%)}
 .page-top h1{font-size:clamp(2.8rem,7vw,5.4rem);font-weight:800;max-width:12ch}
 .page-top p{max-width:54ch;margin-top:1em;font-size:1.12rem;color:#d9e8f2}
 
@@ -66,17 +66,17 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 
 /* Guía de formatos y cortes */
 .guide{background:var(--white)}
-.guide-head{display:grid;grid-template-columns:1fr 1fr;gap:24px 60px;align-items:end;margin-bottom:56px}
+.guide-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 60px;align-items:end;margin-bottom:56px}
 .guide-head h2{font-size:clamp(2.2rem,4.6vw,3.6rem);font-weight:800}
 .guide-head p{color:var(--slate);max-width:50ch}
 .group-title{display:flex;align-items:center;gap:16px;font:700 1.35rem Urbanist;color:var(--fjord);margin:0 0 24px}
 .group-title::after{content:"";flex:1;height:1px;background:#d3e6ea}
-.whole{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:72px}
-.cut{background:var(--ice);border-radius:var(--r-lg);padding:28px 28px 30px;display:flex;flex-direction:column}
+.whole{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-bottom:72px}
+.cut{min-width:0;background:var(--ice);border-radius:var(--r-lg);padding:28px 28px 30px;display:flex;flex-direction:column}
 .removed{font-size:.8rem;color:var(--slate);margin-top:6px;font-style:italic}
 .trim-grid .cut figure{aspect-ratio:2.2/1}
-.cut figure{margin:0 0 22px;aspect-ratio:16/6;display:grid;place-items:center;background:radial-gradient(ellipse at center,#fff 0%,#fff 55%,rgba(255,255,255,0) 72%);border-radius:14px}
-.cut img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.cut figure{position:relative;overflow:hidden;margin:0 0 22px;aspect-ratio:16/6;background:radial-gradient(ellipse at center,#fff 0%,#fff 55%,rgba(255,255,255,0) 72%);border-radius:14px}
+.cut img{position:absolute;top:0;left:0;width:100%;height:100%;max-width:none;object-fit:contain;mix-blend-mode:multiply}
 .cut .tagline{display:flex;align-items:baseline;gap:12px;margin-bottom:8px}
 .cut .k{font:800 1.9rem/1 Urbanist;color:var(--fjord)}
 .cut .n{font:600 1rem Urbanist;color:var(--salmon)}
@@ -89,7 +89,7 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 .sw.pins{background:#f26a3d repeating-linear-gradient(100deg,transparent 0 4px,#fff 4px 6px)}
 .sw.fin{background:linear-gradient(135deg,#3f4b57,#8794a0)}
 .sw.bone{background:#efe7da;border:1px solid #cdbda6}
-.trim-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:24px}
+.trim-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px}
 .trim-grid .cut{grid-column:span 2}
 .trim-grid .cut:nth-child(4){grid-column:2 / span 2}
 .trim-grid .cut:nth-child(5){grid-column:4 / span 2}
@@ -102,8 +102,8 @@ tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
 .rm li{background:#fff1ea;color:#a8401c;border:1px solid #f6cdb9;border-radius:999px;padding:4px 11px;font-size:.84rem;font-weight:600}
 .rm li::before{content:"− ";font-weight:700}
 .cut .keep{margin-top:auto;padding-top:14px;font-size:.88rem;color:var(--fjord-2);font-weight:600}
-@media(max-width:980px){.trim-grid{grid-template-columns:1fr 1fr}.trim-grid .cut,.trim-grid .cut:nth-child(4),.trim-grid .cut:nth-child(5){grid-column:auto}}
-@media(max-width:700px){.guide-head,.whole,.trim-grid{grid-template-columns:1fr}}
+@media(max-width:980px){.trim-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.trim-grid .cut,.trim-grid .cut:nth-child(4),.trim-grid .cut:nth-child(5){grid-column:auto}}
+@media(max-width:700px){.guide-head,.whole,.trim-grid{grid-template-columns:minmax(0,1fr)}}
 
 .ctas-row{display:flex;gap:12px;flex-wrap:wrap}
 .btn-wa{background:#25D366;color:#073b1f}
