@@ -4,7 +4,7 @@ let pool;
 let lista;
 
 function url() {
-  return process.env.DATABASE_URL || process.env.POSTGRES_URL || process.env.POSTGRES_PRISMA_URL;
+  return process.env.DATABASE_URL || process.env.POSTGRES_URL || process.env.STORAGE_URL || process.env.POSTGRES_PRISMA_URL;
 }
 
 function getPool() {
